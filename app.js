@@ -17,21 +17,14 @@ $(document).ready(function() {
 		var number_fb = document.getElementById('field_num').value; 
 		//var change = document.getElementById('text').innerHTML
 
-		if (check()) {
+		if (check() && number_fb !== "") {
 			//removes show div, and reveals hide div
-			$('#show').fadeOut(1000);
+			$('#show').remove();
 			$('#hide').show();
-
-			//create a new paragraph underneath the hide div w/ id of "addText"
-			var div = document.getElementById('hide');
-			var	p = document.createElement('p');
-			p.setAttribute('id', 'addText')
-			div.appendChild(p);
-
 
 			//create variables and array for the for loop
 			var arr = [];
-			var fzbz = "fizz buzz";
+			var fzbz = "fizzbuzz";
 			var fz = "fizz";
 			var bz = "buzz";
 
@@ -49,9 +42,22 @@ $(document).ready(function() {
 					arr.push(i);
 				}
 			}
-			p.innerHTML = arr.toString();
+
+			//create a new paragraph underneath the hide div w/ id of "addText"
+			var div = document.getElementById('hide');
+			var	p = document.createElement('p');
+			p.setAttribute('id', 'addText')
+			
+
+			var h1 = document.createElement('h1');
+			div.appendChild(h1)
+			div.appendChild(p);
+
+			h1.innerHTML = "FizzBuzz to " + arr.length;
+			p.innerHTML = arr.join(' ')
+
 		} else {
-			console.log('please enter a real number');
+			alert('please enter a real number');
 		}
 	}
 
