@@ -1,9 +1,9 @@
 $(document).ready(function() {
+	//var number = +$('input').val();	
 
-	var number = +$('input').val();
-
-	function check(b) {
-		if (isNaN(b)) {
+	function check() {
+		var number_check = document.getElementById('field_num').value;
+		if (isNaN(number_check)) {
 			console.log('this is not a number')
 			return false;
 		} else {
@@ -12,9 +12,11 @@ $(document).ready(function() {
 		}
 	}
 
-	function fizzBuzz(s) {
-		if (check(s)) {
-			for(var i=1; i <= number; i++) {
+	function fizzBuzz() {
+		var number_fb = document.getElementById('field_num').value; 
+
+		if (check()) {
+			for(var i=1; i <= number_fb; i++) {
 				if (i % 3 === 0 && i % 5 === 0) {
 					console.log('fizz buzz');
 				} else if(i % 3 === 0) {
@@ -26,10 +28,17 @@ $(document).ready(function() {
 				}
 			}
 		} else {
-			console.log('please enter a real number')
+			console.log('please enter a real number');
 		}
 	}
 
-	fizzBuzz(number);
+	fizzBuzz();
+
+
+	// $('button').on('click', function () {
+	// 	var number = document.getElementById('field_num').value;
+	// 	console.log(number)
+	// 	fizzBuzz(number);
+	// })
 	
 })
