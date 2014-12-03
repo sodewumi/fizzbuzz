@@ -39,7 +39,7 @@ $(document).ready(function() {
 			// for loop pushes, fizz, buzz, fizzbuzz, or i into the array
 			for(var i=1; i <= number_fb; i++) {
 				if (i % 3 === 0 && i % 5 === 0) {
-					p.appendChild('yo');
+					//p.appendChild('yo');
 					arr.push(fzbz);
 				} else if(i % 3 === 0) {
 					arr.push(fz);
@@ -49,8 +49,7 @@ $(document).ready(function() {
 					arr.push(i);
 				}
 			}
-
-			// p.appendChild('yo');
+			p.innerHTML = arr.toString();
 		} else {
 			console.log('please enter a real number');
 		}

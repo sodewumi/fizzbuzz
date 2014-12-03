@@ -61,4 +61,10 @@ input {
 
 div#hide {
     display: none;
+    position:relative; 
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    color: white;
+    /*background-color: yellow;*/
 }
