@@ -2,8 +2,8 @@ $(document).ready(function() {
 
 	var number = +$('input').val();
 
-	function check(i) {
-		if (isNaN(i)) {
+	function check(b) {
+		if (isNaN(b)) {
 			console.log('this is not a number')
 			return false;
 		} else {
@@ -12,13 +12,24 @@ $(document).ready(function() {
 		}
 	}
 
-	function fizzBuzz() {
-		for(var i=1; i <= number; i++) {
-			console.log('i')
+	function fizzBuzz(s) {
+		if (check(s)) {
+			for(var i=1; i <= number; i++) {
+				if (i % 3 === 0 && i % 5 === 0) {
+					console.log('fizz buzz');
+				} else if(i % 3 === 0) {
+					console.log('fizz');
+				} else if (i % 5 === 0) {
+					console.log('buzz');
+				} else {
+					console.log(i);
+				}
+			}
+		} else {
+			console.log('please enter a real number')
 		}
-
 	}
 
-	fizzBuzz()
+	fizzBuzz(number);
 	
 })
