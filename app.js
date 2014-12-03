@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	//var number = +$('input').val();	
+
+	//check function checks if the value entered into the input field is a number
 
 	function check() {
 		var number_check = document.getElementById('field_num').value;
@@ -11,6 +12,8 @@ $(document).ready(function() {
 			return true;
 		}
 	}
+
+	//fizzBuzz function grabs the number as well, and implements fizzbuzz
 
 	function fizzBuzz() {
 		var number_fb = document.getElementById('field_num').value; 
@@ -32,13 +35,7 @@ $(document).ready(function() {
 		}
 	}
 
-	fizzBuzz();
 
-
-	// $('button').on('click', function () {
-	// 	var number = document.getElementById('field_num').value;
-	// 	console.log(number)
-	// 	fizzBuzz(number);
-	// })
+	$('button').on('click', fizzBuzz)
 	
 })
